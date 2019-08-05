@@ -1,5 +1,21 @@
 ﻿extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  form.et_form(name="new-user-form", method="POST", action="/api/exercise/new-user")
+    h2 Create a new user
+    input.et_textbox(type="text", name="new-username", placeholder="username")
+    br
+    br
+    input.et_submit(type="submit", name="new-user-submit")
+    
+  hr
+
+  form.et_form(name="add-exercises-form", method="POST", action="/api/exercise/add")
+    h2 Add Exercises
+    input.et_textbox(type="text", name="user-id", placeholder="userId*")
+    input.et_textbox(type="text", name="description", placeholder="description*")
+    input.et_textbox(type="text", name="duration", placeholder="duration* (mins.)")
+    input.et_textbox(type="text", name="date", placeholder="date (yyyy-mm-dd)")
+    br
+    br
+    input.et_submit(type="submit", name="add-exercises-submit")
