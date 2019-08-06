@@ -4,11 +4,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Express' });
+    res.render('index', { title: 'Exercise Tracker' });
 });
 
 router.get('/api/exercise/log?{userId}[&from][&to][&limit]', function (req, res) {
-    // complete this method....
+    if (req.method === 'GET') {
+        // complete this method....
+    }
 });
 
 router.get('/api/exercise/new-user', function (req, res) {
